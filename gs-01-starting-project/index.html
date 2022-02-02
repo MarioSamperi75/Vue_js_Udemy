@@ -1,3 +1,5 @@
+<!--a way of adding vue to the project: line 20 before the app.js script-->
+<!--check https://vuejs.org/v2/guide/installation.html-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,11 +12,15 @@
     <div id="app">
       <div>
         <label for="goal">Goal</label>
-        <input type="text" id="goal" />
-        <button>Add Goal</button>
+        <input type="text" id="goal" v-model="enteredValue" />
+        <button v-on:click="addGoal">Add Goal</button>
       </div>
-      <ul></ul>
+      <ul>
+        <li v-for="goal in goals">{{goal}}</li>
+      </ul>
     </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
     <script src="app.js"></script>
   </body>
 </html>
